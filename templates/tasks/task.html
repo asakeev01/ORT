@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for i in all_tasks %}
+    <h1>{{i.number}}</h1>
+    <p>{{i.name}}</p>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="POST" class = "allforms">
+        {% for i in all_questions %}
+            <h1>{{i.number}}</h1>
+            <p>{{i.condition}}</p>
+            <p>{{i.introduction}}</p>
+            {% csrf_token %}
+            <div>
+                <input type="radio" id="first" value="first_choice" name = {{i.number}}>
+                <label for="first">{{i.first_choice}}</label>
+
+                <input type="radio" id="second" value="second_choice" name = {{i.number}}>
+                <label for="second">{{i.second_choice}}</label>
+
+                <input type="radio" id="third" value="third_choice" name = {{i.number}}>
+                <label for="third">{{i.third_choice}}</label>
+
+                <input type="radio" id="fourth" value="fourth_choice" name = {{i.number}}>
+                <label for="fourth">{{i.fourth_choice}}</label>
+            </div>
+            {% endfor %}
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+
+
+{% endblock content %}
