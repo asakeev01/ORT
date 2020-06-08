@@ -2,10 +2,8 @@ from django.db import models
 
 
 class Introduction(models.Model):
-    number = models.PositiveIntegerField()
-    name = models.CharField(max_length = 255)
-    description = models.TextField()
-    score = models.PositiveIntegerField(default = 0)
+    option = models.PositiveIntegerField(default=0)
+
 
 class Question(models.Model):
     number = models.PositiveIntegerField()
