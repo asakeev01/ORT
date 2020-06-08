@@ -4,8 +4,8 @@ from .models import *
 
 
 def tasks_list(request):
-    all_tasks = Introduction.objects.all()
-    return render(request, 'tasks/task.html', locals())
+    tasks = Introduction.objects.all()
+    return render(request, 'index.html', context={'tasks': tasks})
 
 def questions_list(request, pk):
     task = Introduction.objects.get(pk = pk)

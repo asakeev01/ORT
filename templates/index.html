@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ORT Online</title>
+	<link rel="stylesheet" href="{% static 'styles/main.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+<header id='header'>
+	<navbar class="navbar">
+		<p class="title">ORT Online</p>
+		<ul class="nav_list">
+			<li class="nav_item"><a href="#">Главная</a></li>
+			<li class="nav_item"><a href="#">Подготовка</a></li>
+			<li class="nav_item"><a href="#">Контакты</a></li>
+			<li class="nav_item"><a href="#">Профиль</a></li>
+			<li class="nav_item"><a href="#"><img src="{% static 'images/user.png' %}" class="avatar"></a></li>
+		</ul>
+	</navbar>
+</header>
+
+<section id="section">
+	<div class="tasks">
+		<div class="choose_option">
+		<p style="dislpay: inline-block;">Выберите вариант:</p>
+		<select class="option">
+			<option disabled>Вариант №</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/math.jpg' %}" alt="">
+			<p class="name">Математика</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 60</span></p>
+			<button type="submit" class="start">Начать</button>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/grammar.jpg' %}" alt="">
+			<p class="name">Грамматика</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 30</span></p>
+			<button type="submit" class="start">Начать</button>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/book.jpg' %}" alt="">
+			<p class="name">Чтение и понимание</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 30</span></p>
+			<button type="submit" class="start">Начать</button>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/analogy.jpeg' %}" alt="">
+			<p class="name">Аналогии и дополнения</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 30</span></p>
+			<button type="submit" class="start">Начать</button>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>
