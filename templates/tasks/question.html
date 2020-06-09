@@ -27,19 +27,9 @@
                 <input type="radio" id="fifth" value="д_вариант" name = {{i.номер}}>
                 <label for="fifth">{{i.д_вариант}}</label>
             </div>
-            {% if answered %}
-                <p>Правильный ответ: {{i.правильный_вариант}}</p>
-                <details>
-                    <summary>Объяснение</summary>>
-                    {{i.объяснение}}
-                </details>
-            {% endif %}
             {% endfor %}
-            <p>{{task.балл}}</p>
             <div>
                 <button type="submit">Submit</button>
             </div>
     </form>
-
-
 {% endblock content %}

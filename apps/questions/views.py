@@ -20,6 +20,6 @@ def questions_list(request, pk):
             объяснение = current_question.объяснение
             if answers == current_question.правильный_вариант:
                 task.балл += 1
-        return render(request, 'tasks/question.html', locals())
+        return render(request, 'tasks/explanation.html', locals())
     else:
         return render(request, 'tasks/question.html', locals())
