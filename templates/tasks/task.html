@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for i in all_tasks %}
-    <h1>{{i.number}}</h1>
-    <p>{{i.name}}</p>
+    <h1>{{i.номер}}</h1>
+    <p>{{i.имя}}</p>
+    <p>{{i.балл}}</p>
 {% endfor %}
 {% endblock content %}
