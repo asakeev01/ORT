@@ -1,4 +1,6 @@
 from django.db import models
+
+
 RIGHT_ANSWER_CHOICE = [
     ('а_вариант', 'А_ВАРИАНТ'),
     ('б_вариант', 'Б_ВАРИАНТ'),
@@ -22,8 +24,12 @@ class Question(models.Model):
     в_вариант = models.CharField(max_length = 100, null = True, blank = True)
     г_вариант = models.CharField(max_length = 100, null = True, blank = True)
     д_вариант = models.CharField(max_length = 100, null = True, blank = True)
-    правильный_вариант = models.CharField(max_length = 100, choices = RIGHT_ANSWER_CHOICE,
-        default = a_вариант)
+    объяснение = models.TextField(null = True, blank = True)
+
+class Answer(models.Model):
+    вопрос = models.OneToOneField(Question, on_delete = models.CASCADE, related_name = 'answer')
+    правильный_вариант = models.CharField(max_length = 100, choices = RIGHT_ANSWER_CHOICE)
+    отмеченный_вариант = models.CharField(max_length = 100, choices = RIGHT_ANSWER_CHOICE, null = True, blank = True)
     объяснение = models.TextField(null = True, blank = True)
     
 

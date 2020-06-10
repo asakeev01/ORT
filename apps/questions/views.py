@@ -15,10 +15,14 @@ def questions_list(request, pk):
     if request.method == 'POST':
         answered = True 
         for i in range(1, last_question.номер + 1):
-            answers = request.POST.get(str(i))
+            answer = request.POST.get(str(i))
             current_question = task.question.get(номер = i)
-            объяснение = current_question.объяснение
-            if answers == current_question.правильный_вариант:
+            answer_model = Answer.objects.get(вопрос = current_question)
+            right_answer = current_question.answer.правильный_вариант
+            answer_model.отмеченный_вариант = answer
+            answer_model.save()
+            объяснение = current_question.answer.объяснение
+            if answer_model == right_answer:
                 task.балл += 1
         return render(request, 'tasks/explanation.html', locals())
     else:
