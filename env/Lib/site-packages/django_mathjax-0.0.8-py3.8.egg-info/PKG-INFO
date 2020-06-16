@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: django-mathjax
+Version: 0.0.8
+Summary: MathJax easy integration with django
+Home-page: https://github.com/kaleidos/django-mathjax
+Author: Jesús Espino García
+Author-email: jespinog@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: django,mathjax
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP

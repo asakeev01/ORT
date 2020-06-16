@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="POST" class = "allforms">
+        {% for i in all_questions %}
+            {% if i.картинка %}
+                <img src = "{{i.картинка.url}}">
+            {% endif %}
+            <h1>{{i.номер}}</h1>
+            <p>{{i.условие}}</p>
+            <p>{{i.введение}}</p>
+            {% csrf_token %}
+            <div>
+                <label>а.</label>
+                <input type="radio" id="first" value="а_вариант" name = {{i.номер}}>
+                <label for="first">{{i.a_вариант}}</label>
+
+                <label>б.</label>
+                <input type="radio" id="second" value="б_вариант" name = {{i.номер}}>
+                <label for="second">{{i.б_вариант}}</label>
+
+                <label>в.</label>
+                <input type="radio" id="third" value="в_вариант" name = {{i.номер}}>
+                <label for="third">{{i.в_вариант}}</label>
+
+                <label>г.</label>
+                <input type="radio" id="fourth" value="г_вариант" name = {{i.номер}}>
+                <label for="fourth">{{i.г_вариант}}</label>
+                
+                <label>д.</label>
+                <input type="radio" id="fifth" value="д_вариант" name = {{i.номер}}>
+                <label for="fifth">{{i.д_вариант}}</label>
+            </div>
+            {% endfor %}
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+{% endblock content %}

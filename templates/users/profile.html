@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>{{user.username}}</p>
+{% for question in questions %}
+    <p>{{question.answer}}</p>
+    <p>Твой вариант: {{question.answer.отмеченный_вариант}}</p>
+    <p>Правильный ответ: {{question.answer.правильный_вариант}}</p>
+    <details>
+        <summary>Объяснение</summary>>
+        {{question.answer.объяснение}}
+    </details>
+{% endfor %}
+<p>{{task.балл}}</p>
+{% endblock content %}
