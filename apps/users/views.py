@@ -16,13 +16,13 @@ def login(request):
 				auth.login(request, user)
 				return redirect('/tasks/')
 			else:
-				messages.error(request, 'invalid credentials')
+				messages.error(request, 'Пользователь не найден')
 				return redirect('login')
 		elif 'signup' in request.POST:
 			username = request.POST['username']
 			password = request.POST['password']
 			if User.objects.filter(username=username).exists():
-				messages.info(request, 'Username taken')
+				messages.info(request, 'Имя занято')
 				return redirect('register')
 			else:
 				user = User.objects.create_user(password=password, username=username)
@@ -45,7 +45,7 @@ def register(request):
 			# email = request.POST['email']
 			password = request.POST['password']
 			if User.objects.filter(username=username).exists():
-				messages.info(request, 'Username taken')
+				messages.info(request, 'Имя занято')
 				return redirect('register')
 			else:
 				user = User.objects.create_user(password=password, username=username)
@@ -61,7 +61,7 @@ def register(request):
 				auth.login(request, user)
 				return redirect('/tasks/')
 			else:
-				messages.error(request, 'invalid credentials')
+				messages.error(request, 'Пользователь не найден')
 				return redirect('login')
 	else:
 		return render(request, 'users/register.html')
@@ -76,10 +76,9 @@ def review_list(request):
 	return render(request, 'tasks/review.html', locals())
 
 def review_detail(request, pk):
-	user = request.user
-	profile = user.profile
-	review = Review.objects.get(pk = pk)
+	profile = request.user.profile
 	is_answered = True
+	review = Review.objects.get(pk = pk)
 	print(review.балл)
 	answers = review.answer.all()
 	return render(request, 'tasks/explanation.html', locals())

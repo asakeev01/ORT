@@ -92,7 +92,7 @@ form {
 	position: absolute;
 	width: 90%;
 	left: 45px;
-	top: 0;
+	top: -13px;
 	padding: 10px 0;
 	cursor: pointer;
 }

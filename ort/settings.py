@@ -1,10 +1,12 @@
 
 import os
-import django_heroku
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@z3zb$35&2&lf4njdwpn-kxa!-$%dp6%!inlqxl(4#c+%nydyc'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -86,9 +88,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static'
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -105,6 +107,5 @@ MATHJAX_CONFIG_DATA = {
   }
 }
 
-django_heroku.settings(locals())
 
 

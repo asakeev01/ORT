@@ -9,7 +9,7 @@
 	{% for review in reviews %}
 
 	<ul>
-		<li>review.балл</li>
+		<li>{{user.username}}</li>
 		<a href="{% url 'review_detail' review.id%}">review</a>
 	</ul>
 

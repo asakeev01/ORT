@@ -24,6 +24,8 @@
 
 .score {
 	text-align: center;
+	font-size: 22px;
+	margin-bottom: 5%;
 }
 
 .answer_exp {

@@ -1,9 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 from apps.users.models import Profile
 
-from ckeditor.fields import RichTextField
 
 
 RIGHT_ANSWER_CHOICE = [

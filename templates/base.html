@@ -25,15 +25,18 @@
         <p class="title">ORT Online</p>
         <ul class="nav_list">
             {% url 'tasks-list' as index %}
+            {% if user.is_authenticated %}
             <li class="nav_item">Hello, {{user.username}}</li>
+            {% endif %}
             <li class="{% if request.path == index %}nav_item{% else %} home{% endif %}"><a href="{% url 'tasks-list' %}">Главная</a></li>
             <li class="nav_item"><a href="#">Подготовка</a></li>
             <li class="nav_item"><a href="#">Контакты</a></li>
             {% if user.is_authenticated %}
+            <li class="nav_item"><a href="{% url 'logout' %}">Выйти</a></li>
             <li class="nav_item"><a href="{% url 'review' %}">Профиль</a></li>
             <li class="nav_item"><a href="#"><img src="{% static 'images/user.png' %}" class="avatar"></a></li>
             {% else %}
-            <li class="nav_item"><a href="{% url 'login' %}">Login</a></li>
+            <li class="nav_item"><a href="{% url 'login' %}">Войти</a></li>
             {% endif %}
         </ul>
     </navbar>
