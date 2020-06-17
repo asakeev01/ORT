@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
+from apps.questions.models import Review
+
 
 def login(request):
 	if request.method == 'POST':
@@ -65,12 +67,19 @@ def register(request):
 		return render(request, 'users/register.html')
 
 
-def profile(request):
+def review_list(request):
 	user = request.user
-	profile = request.user.profile
-	tasks = profile.tasks.all()
-	print(tasks) 
-	for task in tasks:
-		questions = task.question.all()
-	print(tasks)
-	return render(request, 'users/profile.html', locals())
+	profile = user.profile
+	reviews = profile.review.all()
+	for review in reviews:
+		answers = review.answer.all()
+	return render(request, 'tasks/review.html', locals())
+
+def review_detail(request, pk):
+	user = request.user
+	profile = user.profile
+	review = Review.objects.get(pk = pk)
+	is_answered = True
+	print(review.балл)
+	answers = review.answer.all()
+	return render(request, 'tasks/explanation.html', locals())

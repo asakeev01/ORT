@@ -5,7 +5,7 @@ from .models import *
 
 def tasks_list(request):
     all_tasks = Introduction.objects.all()
-    return render(request, 'tasks/task.html', locals())
+    return render(request, 'tasks/index.html', locals())
 
 def questions_list(request, pk):
     is_image = False 
@@ -39,7 +39,7 @@ def questions_list(request, pk):
         answers = review.answer.all()
         return render(request, 'tasks/explanation.html', locals())
     else:
-        return render(request, 'tasks/all_questions.html', locals())
+        return render(request, 'tasks/index.html', locals())
 
 def firstmath_list(request, pk):
     is_image = False
@@ -72,13 +72,13 @@ def firstmath_list(request, pk):
         answers = review.answer.all()
         return render(request, 'tasks/explanation.html', locals())
     else:
-        return render(request, 'tasks/firstmath_questions.html', locals())
+        return render(request, 'tasks/mathone.html', locals())
 
 def secondmath_list(request, pk):
     is_answered = False 
     task = Introduction.objects.get(pk = pk)
-    all_questions = task.question.filter(номер__gt = 30, номер__lte = 90)
-    last_question = all_questions.order_by('номер').last()
+    all_questions = task.question.filter(номер__gt = 30, номер__lte = 90).order_by('номер')
+    last_question = all_questions.last()
     if request.method == 'POST':
         if request.user.is_authenticated:
             profile = request.user.profile
@@ -103,7 +103,7 @@ def secondmath_list(request, pk):
         answers = review.answer.all()
         return render(request, 'tasks/explanation.html', locals())
     else:
-        return render(request, 'tasks/secondmath_questions.html', locals())
+        return render(request, 'tasks/mathtwo.html', locals())
 
 def firstrussia_complement_list(request, pk):
     is_answered = False 
@@ -134,7 +134,7 @@ def firstrussia_complement_list(request, pk):
         answers = review.answer.all()
         return render(request, 'tasks/explanation.html', locals())
     else:
-        return render(request, 'tasks/firstrussia_complement.html', locals())
+        return render(request, 'tasks/question.html', locals())
 
 def secondrussia_reading_list(request, pk):
     is_answered = False 
@@ -165,7 +165,7 @@ def secondrussia_reading_list(request, pk):
         answers = review.answer.all()
         return render(request, 'tasks/explanation.html', locals())
     else:
-        return render(request, 'tasks/secondrussia_reading.html', locals())
+        return render(request, 'tasks/reading.html', locals())
 
 def thirdrussia_grammar_list(request, pk):
     is_answered = False 
@@ -196,4 +196,4 @@ def thirdrussia_grammar_list(request, pk):
         answers = review.answer.all()
         return render(request, 'tasks/explanation.html', locals())
     else:
-        return render(request, 'tasks/thirdrussia_grammar.html', locals())
+        return render(request, 'tasks/grammar.html', locals())

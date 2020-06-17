@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<section id="section">
+	<div class="tasks">
+		<div class="choose_option">
+		<p>Выберите вариант:</p>
+		<select class="option">
+			<option disabled>Вариант №</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		</div>
+		{% for i in all_tasks %}
+		<div class="task">
+			<img src="{% static 'images/math.jpg' %}" alt="">
+			<p class="name">Математика</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 60</span></p>
+			<button type="submit" class="start"><a href="{% url 'secondmath-list' i.id %}">Начать</a></button>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/grammar.jpg' %}" alt="">
+			<p class="name">Грамматика</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 30</span></p>
+			<button type="submit" class="start"><a href="{% url 'thirdrussia-list' i.id %}">Начать</a></button>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/book.jpg' %}" alt="">
+			<p class="name">Чтение и понимание</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 30</span></p>
+			<button type="submit" class="start"><a href="{% url 'secondrussia-list' i.id %}">Начать</a></button>
+		</div>
+		<div class="task">
+			<img src="{% static 'images/analogy.jpeg' %}" alt="">
+			<p class="name">Аналогии и дополнения</p>
+			<p class="description">Время: 30 минут<br><span style="margin-left: 4px;">Кол-во заданий: 30</span></p>
+			<button type="submit" class="start"><a href="{% url 'firstrussia-list' i.id %}">Начать</a></button>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+{% endblock %}

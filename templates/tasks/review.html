@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Review</title>
+</head>
+<body>
+	
+	{% for review in reviews %}
+
+	<ul>
+		<li>review.балл</li>
+		<a href="{% url 'review_detail' review.id%}">review</a>
+	</ul>
+
+	{% endfor %}
+
+</body>
+</html>

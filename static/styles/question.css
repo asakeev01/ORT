@@ -1,0 +1,132 @@
+form {
+	margin: 0;
+}
+
+.home {
+	color: white;
+	display: inline;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	margin-left: 25px;
+	font-style: none;
+}
+
+.home a {
+	text-decoration: none;
+	color: white;
+	padding: 15px;
+}
+
+.home:hover a {
+	transition-duration: .2s;
+	color: #ffc107;
+}
+
+#countdown {
+	width: 100px;
+	margin: auto;
+	margin-top: 30px;
+	border: 1px solid #005a65f0;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 23px;
+	color: #005a65f0;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 2px;
+	box-shadow: 1px 1px 10px #005a656b; 
+}
+
+.questions_block {
+	display: grid;
+  	grid-template-rows: repeat(4, 1fr);
+  	grid-gap: 0 0;
+  	grid-auto-flow: column;
+	width: 85%;
+	margin: 3% auto;
+	background: lightgray;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+}
+
+.question {
+	background: white;
+	padding: 10px 10px 0 15px;
+	font-family: 'PT Sans', sans-serif;
+	border-bottom: .3px solid gray;
+	border-right: .3px solid gray;
+}
+
+.answer_list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.answer {
+	width: 90%;
+	height: 25px;
+	background: #d3d3d35e;
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 6px;
+	padding: 10px;
+	border-radius: 7px;
+	position: relative;
+}
+
+.answer input {
+	height: 20px;
+	width: 20px;
+}
+
+.tick {
+	width: 18px;
+	height: 17px;
+	position: absolute;
+	display: none;
+	top: 14px;
+	left: 13px;
+}
+
+.answer label {
+	position: absolute;
+	width: 90%;
+	left: 45px;
+	top: 0;
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+.number {
+	font-size: 17px;
+	font-weight: bold;
+	display: inline-block;
+	margin: 0;
+}
+
+.condition {
+	display: inline-block;
+	margin: 0;
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+.submit {
+	width: 170px;
+	height: 50px;
+	background: #005a65f0;
+	margin: 20px 0 80px 44%;
+	border-radius: 50px;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.submit:hover {
+	background: transparent;
+	color: #005a65f0;
+	box-shadow: 1px 1px 5px #005a656b;
+	transition-duration: .4s;
+	border: .5px solid #005a65f0;
+	font-size: 16px;
+}

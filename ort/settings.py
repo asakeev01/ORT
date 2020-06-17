@@ -1,7 +1,6 @@
 
 import os
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import django_heroku
 SECRET_KEY = '@z3zb$35&2&lf4njdwpn-kxa!-$%dp6%!inlqxl(4#c+%nydyc'
 DEBUG = True
 
@@ -106,3 +105,7 @@ MATHJAX_CONFIG_DATA = {
       ]
   }
 }
+
+django_heroku.settings(locals())
+
+

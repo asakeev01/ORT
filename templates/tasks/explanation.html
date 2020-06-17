@@ -1,31 +1,38 @@
 {% extends 'base.html' %}
-{% block content %}
+
+{% block 'content' %}
+{% load static %}
+
+{% block 'extrahead' %}<link rel="stylesheet" href="{% static 'styles/explanation.css' %}">{% endblock %}
+
+<p class="score">Score:{{review.балл}}/10</p>
+
 {% for i in answers %}
-            <h1>{{i.вопрос.номер}}</h1>
+        <div class="question_exp">
+            <h1 class="number_exp">{{i.вопрос.номер}}</h1>
             <p>{{i.вопрос.условие}}</p>
-            <p>{{i.вопрос.введение}}</p>
+            {# <p>{{i.введение}}</p> #}
             {% csrf_token %}
-            <div>
-                <label>а.</label>
+            <li class="answer_exp">а.
                 <input type="radio" id="first" value="а_вариант" name = {{i.номер}}, style="display:none;">
                 <label for="first">{{i.вопрос.a_вариант}}</label>
+            </li>
 
-                <label>б.</label>
+            <li class="answer_exp">б.
                 <input type="radio" id="second" value="б_вариант" name = {{i.номер}}, style="display:none;">
                 <label for="second">{{i.вопрос.б_вариант}}</label>
+            </li>
 
-                <label>в.</label>
+            <li class="answer_exp">в.
                 <input type="radio" id="third" value="в_вариант" name = {{i.номер}}, style="display:none;">
                 <label for="third">{{i.вопрос.в_вариант}}</label>
+            </li>
 
-                <label>г.</label>
+            <li class="answer_exp">г.
                 <input type="radio" id="fourth" value="г_вариант" name = {{i.номер}}, style="display:none;">
                 <label for="fourth">{{i.вопрос.г_вариант}}</label>
+            </li>
 
-                <label>д.</label>
-                <input type="radio" id="fifth" value="д_вариант" name = {{i.номер}}, style="display:none;">
-                <label for="fifth">{{i.вопрос.д_вариант}}</label>
-            </div>
             {% if is_answered %}
                 <p>Твой вариант: {{i.отмеченный_вариант}}</p>
                 <p>Правильный ответ: {{i.вопрос.правильный_вариант}}</p>
@@ -34,6 +41,8 @@
                     {{i.вопрос.объяснение}}
                 </details>
             {% endif %}
+            </div>
             {% endfor %}
-            <p>{{review.балл}}</p>
-{% endblock content %}
+
+
+{% endblock %}

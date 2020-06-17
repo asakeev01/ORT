@@ -1,0 +1,35 @@
+.home {
+	color: white;
+	display: inline;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	margin-left: 25px;
+	font-style: none;
+}
+
+.home a {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+}
+
+.home:hover a {
+	transition-duration: .2s;
+	color: #ffc107;
+}
+
+.question_exp {
+	background: #607d8ba3;
+}
+
+.score {
+	text-align: center;
+}
+
+.answer_exp {
+	padding-left: 10px;
+}
+
+.number_exp {
+	text-align: center;
+}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+{% load static %}
+
+{% block 'extrahead' %}
+<link rel="stylesheet" href="{% static 'styles/question.css' %}">
+{% endblock %}
+                        {# Timer #}
+
+<p id="countdown">30:00</p>
+
+                        {# Questions #}
+
+    <form method="POST" class="allforms" name='theForm'>
+    <div class="questions_block">
+    {% for i in all_questions %}
+    <div class="question">
+        <p class="number">{{i.номер}}.</p>
+        <p class="condition">{{i.условие}}</p>
+        {# <p class="base">{{i.введение}}</p> #}
+        {% csrf_token %}
+        <ul class="answer_list">
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}1" value="а_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}1">{{i.a_вариант}}</label>
+            </li>
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}2" value="б_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}2">{{i.б_вариант}}</label>
+            </li>
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}3" value="в_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}3">{{i.в_вариант}}</label>
+            </li>
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}4" value="г_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}4">{{i.г_вариант}}</label>
+            </li>
+        </ul>
+    </div>
+        {% endfor %}
+    </div>
+    <button class="submit">Закончить тест</button>
+</form>
+
+
+{% endblock %}
+
