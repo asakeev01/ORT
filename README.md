@@ -1,6 +1,6 @@
 This ort project have been created to solve real problem during preparation to general republican testing which is required for every student who finished high school.
 ![GitHub Logo](/screenshots/Screen Shot 2020-12-24 at 00.59.19.png)
-![GitHub Logo](/screenshots/Screen Shot 2020-12-24 at 00.59.19.png)
+![GitHub Logo](/screenshots/Screen Shot 2020-12-24 at 00.46.07.png)
 ![GitHub Logo](/screenshots/Screen Shot 2020-12-24 at 00.59.19.png)
 ![GitHub Logo](/screenshots/Screen Shot 2020-12-24 at 00.59.19.png)
 ![GitHub Logo](/screenshots/Screen Shot 2020-12-24 at 00.59.19.png)
