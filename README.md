@@ -1,4 +1,4 @@
-This ort project have been created to solve real problem during preparation to general republican testing which is required for every student who finished high school.
+This ort project have been created to solve real problem during preparation to general republican testing which is required for every student who finished high school.The problem is that there is no good website which can prepare student to this test and the most information is in the not open resource.
 ![GitHub Logo](/screenshots/one.png)
 ![GitHub Logo](/screenshots/two.png)
 ![GitHub Logo](/screenshots/three.19.png)
