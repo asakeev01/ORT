@@ -1,5 +1,5 @@
-This ort project have been created to solve real problem during preparation to general republican testing which is required for every student who finished high school.The problem is that there is no good website which can prepare student to this test and the most information is in the not open resource.
-The feedbacks: https://docs.google.com/document/d/11N7UAHyXnd8mJIFZjZkp21GNwBuKZkpPWwDhAOQ2ado/edit?usp=sharing
+This ort project has been created to solve a real problem during preparation for general republican testing which is required for every student who finished high school. The problem is that there is no good website which can prepare students for this test and most information is in the not open resources.
+The feedback: https://docs.google.com/document/d/11N7UAHyXnd8mJIFZjZkp21GNwBuKZkpPWwDhAOQ2ado/edit?usp=sharing
 The YouTube video - https://youtu.be/ZUMjFhsXx6A
 
 ![GitHub Logo](/screenshots/one.png)
